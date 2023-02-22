@@ -1,3 +1,4 @@
 High speed, easily accessible data storage
 
 O(1) find, insert, delete
+"O(1)" find_key (with up to u64's maximum value hashes)
