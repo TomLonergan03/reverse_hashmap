@@ -11,12 +11,16 @@ impl ReverseHashMap {
         }
     }
 
-    pub fn insert(&mut self, key: K, value: V) -> Option<V> {
+    pub fn insert(&mut self, key: K, value: V) {
         let hashed_key = calculate_hash(&key, &mut self.private_key);
         self.map.insert(hashed_key, value)
     }
 
     pub fn get(&self, key: K) -> Option<&V> {
         self.map.get(&key)
+    }
+
+    pub fn delete(&mut self, key: K) {
+        self.map.remove(&key)
     }
 }
